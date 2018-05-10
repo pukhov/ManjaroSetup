@@ -2,10 +2,13 @@
 
 
 # chech what is it
+# -e  Exit immediately if a command exits with a non-zero status.
+# -x  Print commands and their arguments as they are executed.
+
 set -ex
 
 
-# delete 
+# delete
 # check
 sudo pacman -Rsn --noconfirm \
 	steam-manjaro kvantum-manjaro \
@@ -41,8 +44,19 @@ pacaur -S --noconfirm \
     
 
 # git
+ssh-keygen -N "" -f ~/.ssh/id_rsa
+# get key
+#cat ~/.ssh/id_rsa.pub
 git config --global user.email "a.m.pukhov@gmail.com"
 git config --global user.name "a_pukhov"
+
+for repo in ManjaroSetup RL_YSDA YSDA 
+do
+  git clone https://github.com/pukhov/$repo.git
+  cd ~/$repo
+  git remote set-url origin git@github.com:pukhov/$repo.git
+  cd ~
+done
 
 
 # yandex-disk
@@ -122,3 +136,8 @@ sudo pacman -Syu --noconfirm \
 # )
 
 
+
+# C++ programms for Ubuntu
+# sudo apt-get install g++ git gdb python3 cmake python3-pip ninja-build
+# sudo apt-get install clang-format-4.0
+# sudo pip3 install cpplint
