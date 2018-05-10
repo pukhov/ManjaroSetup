@@ -23,8 +23,7 @@ sudo pacman -Syu --noconfirm \
 
 
 
-# for skype, check first 
-
+# for skype
 sudo pacman -Syu --noconfirm  snapd 	
 sudo systemctl enable --now snapd.socket
 sudo snap install --classic skype
@@ -40,6 +39,11 @@ pacaur -S --noconfirm \
     jupyter jupyter-notebook mathjax python-ipywidgets python-tqdm \
     pandoc-bin \
     
+
+# git
+git config --global user.email "a.m.pukhov@gmail.com"
+git config --global user.name "a_pukhov"
+
 
 # yandex-disk
 
@@ -80,6 +84,13 @@ sudo tlp start
 systemctl enable tlp
 systemctl enable tlp-sleep.service
 
+# if buetooth not working
+# sudo pacman -S bluez bluez-utils
+# sudo modprobe btusb
+# sudo systemctl start bluetooth
+# sudo systemctl enable bluetooth
+
+
 
 # why ?!
 sudo pacman -Syu --noconfirm bumblebee
@@ -109,3 +120,5 @@ sudo pacman -Syu --noconfirm \
 #     IPYTHON_CONFIG="$HOME/.ipython/profile_default/ipython_config.py"
 #     echo -e "$JUPITER_FIGSIZE_FIX$(cat $IPYTHON_CONFIG)" > $IPYTHON_CONFIG
 # )
+
+
