@@ -18,6 +18,7 @@ pacaur -S --noconfirm \
     clion-gdb clion-cmake clion \
     pandoc-bin \
     python-numpy-openblas  \
+	gpmdp \
      #  tor-browser \
     
     
